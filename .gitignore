@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Images (fournies par le kit du projet, trop lourdes pour le repo)
+public/images/
