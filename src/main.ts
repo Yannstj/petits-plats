@@ -1,6 +1,12 @@
 import "./style.css";
 import recipes from "./data/recipes";
-import { RecipeCard } from "./views/RecipeCard";
+import { RecipeList } from "./views/RecipeList";
+import { RecipeCounter } from "./views/RecipeCounter";
 
-const list = document.querySelector<HTMLElement>("#recipes")!;
-recipes.forEach((recipe) => list.appendChild(new RecipeCard(recipe).render()));
+const list = new RecipeList(document.querySelector<HTMLElement>("#recipes")!);
+const counter = new RecipeCounter(
+  document.querySelector<HTMLElement>("#recipe-count")!,
+);
+
+list.render(recipes);
+counter.render(recipes.length);
